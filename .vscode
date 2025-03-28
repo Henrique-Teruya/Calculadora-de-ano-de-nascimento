@@ -1,0 +1,44 @@
+package CalculadoraNascimento;
+import java.util.Scanner;
+/**
+ *
+ * @author henrique.tqueiroz
+ */
+public class JavaApplication4 {
+
+    public static void main(String[] args) {
+        double ano;
+        double aniversario;
+        
+        Scanner batata = new Scanner(System.in);
+
+        System.out.println("Digite seu ano de nascimento:");
+        ano = batata.nextDouble();
+
+        int anoAtual = 2025; 
+        double idade = anoAtual - ano;
+
+        System.out.println("Voce ja fez aniversario este ano? (s/n)");
+        
+        String resposta = batata.next();
+
+        boolean jafezaniversario = false; 
+
+        if (resposta.equalsIgnoreCase("s")) {
+            jafezaniversario = true;
+        } else if (resposta.equalsIgnoreCase("n")) {
+            jafezaniversario = false;
+        } else {
+            System.out.println("Responda com 's' ou 'n'.");
+            return; 
+        }
+
+        if (jafezaniversario) {
+            aniversario = idade;
+        } else {
+            aniversario = idade - 1;
+        }
+
+        System.out.println("Sua idade este ano e: " + aniversario);
+    }
+}
